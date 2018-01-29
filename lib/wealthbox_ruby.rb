@@ -1,23 +1,23 @@
 require 'httparty'
 require 'virtus'
 
-require 'wealthbox_ruby/version'
-require 'wealthbox_ruby/errors'
-require 'wealthbox_ruby/connection'
-require 'wealthbox_ruby/authentication'
-require 'wealthbox_ruby/models/base'
-require 'wealthbox_ruby/models/api_model'
-require 'wealthbox_ruby/models/data_model'
-require 'wealthbox_ruby/models/analysis'
-require 'wealthbox_ruby/models/allocation'
-require 'wealthbox_ruby/models/account'
-require 'wealthbox_ruby/models/portfolio'
-require 'wealthbox_ruby/models/client'
-require 'wealthbox_ruby/client/portfolios'
-require 'wealthbox_ruby/client/clients'
-require 'wealthbox_ruby/client'
+require_relative 'wealthbox_ruby/version'
+require_relative 'wealthbox_ruby/errors'
+require_relative 'wealthbox_ruby/connection'
+require_relative 'wealthbox_ruby/authentication'
+require_relative 'wealthbox_ruby/models/base'
+require_relative 'wealthbox_ruby/models/api_model'
+require_relative 'wealthbox_ruby/models/data_model'
+require_relative 'wealthbox_ruby/models/analysis'
+require_relative 'wealthbox_ruby/models/allocation'
+require_relative 'wealthbox_ruby/models/account'
+require_relative 'wealthbox_ruby/models/portfolio'
+require_relative 'wealthbox_ruby/models/client'
+require_relative 'wealthbox_ruby/client/portfolios'
+require_relative 'wealthbox_ruby/client/clients'
+require_relative 'wealthbox_ruby/client'
 
-module Wealthbox
+module WealthboxRuby
   class << self
     attr_accessor :config
 

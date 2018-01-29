@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   module Models
     class DataModel < Base
       attribute :id, Integer

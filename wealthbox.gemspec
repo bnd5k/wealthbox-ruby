@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "wealthbox_ruby/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "wealthbox_ruby"
-  spec.version       = Weathbox::VERSION
+  spec.name          = "wealthbox-ruby"
+  spec.version       = WealthboxRuby::VERSION
   spec.authors       = ["Evan Waters", "Chris Ostrowski"]
   spec.email         = ["evan@retireup.com", "chris@retireup.com"]
 

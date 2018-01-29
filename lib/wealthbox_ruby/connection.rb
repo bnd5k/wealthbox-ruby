@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   module Connection
     def get(url, options = {})
       request :get, url, options
@@ -32,7 +32,7 @@ module Wealthbox
     def headers
       {
         'Accept' => 'application/json',
-        'Authorization' => "Bearer #{@oauth_token}"
+        'ACCESS_TOKEN' => "Bearer #{@token}"
       }
     end
 
