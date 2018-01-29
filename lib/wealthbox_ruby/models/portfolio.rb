@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   module Models
     class Portfolio < Base
       attribute :id, Integer

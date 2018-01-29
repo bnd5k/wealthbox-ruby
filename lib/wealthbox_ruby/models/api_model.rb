@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   module Models
     class APIModel < Base
       def initialize(attrs = {}, client = nil)

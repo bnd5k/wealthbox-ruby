@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   module Models
     class Allocation < Base
       attribute :id, Integer

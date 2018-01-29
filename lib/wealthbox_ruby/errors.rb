@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   class APIError < StandardError
   end
 

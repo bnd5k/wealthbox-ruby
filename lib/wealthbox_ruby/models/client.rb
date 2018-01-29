@@ -1,4 +1,4 @@
-module Wealthbox
+module WealthboxRuby
   module Models
     class Client < APIModel
       attribute :id, Integer
