@@ -34,7 +34,7 @@ module Wealthbox
     attr_accessor :client_id, :client_secret, :api_endpoint, :token_path
 
     def initialize
-      @api_endpoint = 'https://api2.riskalyze.com/ap/v1'
+      @api_endpoint = 'https://api.crmworkspace.com/v1/'
       @token_path = "/oauthpro/token"
     end
   end
