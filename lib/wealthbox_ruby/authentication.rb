@@ -19,7 +19,7 @@ module WealthboxRuby
         }
       }
 
-      response = handle_response(HTTParty.post("#{@api_endpoint}/#{WealthboxRuby.config.token_path}", params))
+      response = handle_response(HTTParty.post(WealthboxRuby.config.token_url, params))
 
       {
         oauth_token: response[:access_token],
