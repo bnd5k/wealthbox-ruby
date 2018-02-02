@@ -32,7 +32,7 @@ module WealthboxRuby
     def headers
       {
         'Accept' => 'application/json',
-        'ACCESS_TOKEN' => "Bearer #{@access_token}"
+        'ACCESS_TOKEN' => @access_token
       }
     end
 
