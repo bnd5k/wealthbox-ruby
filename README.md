@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'WealthboxRuby-ruby'
+gem 'wealthbox_ruby'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install WealthboxRuby-ruby
+    $ gem install wealthbox_ruby
 
 ## Usage
 
