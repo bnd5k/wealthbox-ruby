@@ -72,6 +72,16 @@ module WealthboxRuby
       attribute :phone_numbers, Array
       attribute :websites, Array
       attribute :custom_fields, Array
+
+      def save
+        if @id
+          response = put "contacts/#{@id}", {body: json_params}
+        else
+          response = post "contacts", {body: json_params}
+        end
+
+        self.class.new response, self
+      end
     end
   end
 end
