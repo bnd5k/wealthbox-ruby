@@ -15,6 +15,16 @@ module WealthboxRuby
         contact = get "contacts/#{contact_id}"
         WealthboxRuby::Models::Contact.new contact, self
       end
+
+      def create_contact(params)
+        contact = WealthboxRuby::Models::Contact.new params, self
+        contact.save
+      end
+
+      def update_contact(contact_id, params)
+        contact = WealthboxRuby::Models::Contact.new params.merge(id: contact_id), self
+        contact.save
+      end
     end
   end
 end
