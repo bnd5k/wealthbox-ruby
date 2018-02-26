@@ -43,7 +43,7 @@ client = WealthboxRuby::Client.new(access_token: token)
   contacts = client.search_contacts('Jerry')
 ```
 
-Returns `Array[Wealthbox::Models::Contact]`
+Returns `Array[WealthboxRuby::Models::Contact]`
 
 ##### Get all contacts
 
@@ -51,7 +51,7 @@ Returns `Array[Wealthbox::Models::Contact]`
   contacts = client.contacts
 ```
 
-Returns `Array[Wealthbox::Models::Contact]`
+Returns `Array[WealthboxRuby::Models::Contact]`
 
 ##### Find contact by id
 
@@ -59,7 +59,7 @@ Returns `Array[Wealthbox::Models::Contact]`
   contact = client.contact(1234)
 ```
 
-Returns `Wealthbox::Models::Contact`
+Returns `WealthboxRuby::Models::Contact`
 
 ##### Create contact
 
@@ -67,7 +67,7 @@ Returns `Wealthbox::Models::Contact`
   contact = client.create_contact(contact_params)
 ```
 
-Returns `Wealthbox::Models::Contact`
+Returns `WealthboxRuby::Models::Contact`
 
 ##### Update contact
 
@@ -75,13 +75,13 @@ Returns `Wealthbox::Models::Contact`
   contact = client.update_contact(contact_params)
 ```
 
-Returns `Wealthbox::Models::Contact`
+Returns `WealthboxRuby::Models::Contact`
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
