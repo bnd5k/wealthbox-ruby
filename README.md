@@ -1,9 +1,5 @@
 # WealthboxRuby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wealthbox_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +18,64 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Authentication
+
+Create a new api key for a user
+
+```ruby
+response = WealthboxRuby::Client.create_api_token(username: "test@example.com", password: "password123")
+token = response['token']
+```
+
+### API
+
+Create a new client
+
+```ruby
+client = WealthboxRuby::Client.new(access_token: token)
+```
+
+#### Contacts
+
+##### Search contacts by name
+
+```ruby
+  contacts = client.search_contacts('Jerry')
+```
+
+Returns `Array[Wealthbox::Models::Contact]`
+
+##### Get all contacts
+
+```ruby
+  contacts = client.contacts
+```
+
+Returns `Array[Wealthbox::Models::Contact]`
+
+##### Find contact by id
+
+```ruby
+  contact = client.contact(1234)
+```
+
+Returns `Wealthbox::Models::Contact`
+
+##### Create contact
+
+```ruby
+  contact = client.create_contact(contact_params)
+```
+
+Returns `Wealthbox::Models::Contact`
+
+##### Update contact
+
+```ruby
+  contact = client.update_contact(contact_params)
+```
+
+Returns `Wealthbox::Models::Contact`
 
 ## Development
 
@@ -32,4 +85,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/WealthboxRuby-ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/retireupinc/wealthbox-ruby.
