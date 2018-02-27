@@ -14,7 +14,7 @@ module WealthboxRuby
       attribute :job_title, String
       attribute :twitter_name, String
       attribute :linkedin_url, String
-      attribute :company, String
+      attribute :company_name, String
       attribute :background_information, String
       attribute :birth_date, Date
       attribute :anniversary, Date
