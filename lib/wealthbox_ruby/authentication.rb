@@ -1,8 +1,8 @@
 module WealthboxRuby
   module Authentication
     def self.included(base)
-        base.extend(ClassMethods)
-      end
+      base.extend(ClassMethods)
+    end
 
     def refresh_access_token!
       raise ArgumentError, 'Refresh token required.' unless @refresh_token
@@ -21,8 +21,11 @@ module WealthboxRuby
 
       response = handle_response(HTTParty.post(WealthboxRuby.config.token_url, params))
 
+      @oauth_token = response['oauth_token']
+      @refresh_token = response['refresh_token']
+
       {
-        oauth_token: response[:access_token],
+        oauth_token: response[:oauth_token],
         refresh_token: response[:refresh_token]
       }
     end
