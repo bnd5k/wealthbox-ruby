@@ -30,10 +30,20 @@ module WealthboxRuby
     end
 
     def headers
-      {
+      headers = {
         'Accept' => 'application/json',
-        'ACCESS_TOKEN' => @access_token
+        'ACCESS_TOKEN' => @api_key
       }
+
+      if @api_key
+        headers['ACCESS_TOKEN'] = @api_key
+      end
+
+      if @oauth_token
+        headers['Authorization'] = "Bearer #{@oauth_token}"
+      end
+
+      headers
     end
 
     def handle_response(response)
