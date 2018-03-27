@@ -21,12 +21,12 @@ module WealthboxRuby
 
       response = handle_response(HTTParty.post(WealthboxRuby.config.token_url, params))
 
-      @oauth_token = response['oauth_token']
+      @oauth_token = response['access_token']
       @refresh_token = response['refresh_token']
 
       {
-        oauth_token: response[:oauth_token],
-        refresh_token: response[:refresh_token]
+        oauth_token: response['access_token'],
+        refresh_token: response['refresh_token']
       }
     end
 
