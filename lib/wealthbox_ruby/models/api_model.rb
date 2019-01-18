@@ -1,16 +1,6 @@
 module WealthboxRuby
   module Models
     class APIModel < Base
-      class << self
-
-        def json_attributes(*args)
-          @@json_attrs = args
-        end
-
-        def json_attrs
-          @@json_attrs
-        end
-      end
 
       def initialize(attrs = {}, client = nil)
         super attrs
@@ -18,7 +8,7 @@ module WealthboxRuby
       end
 
       def json_params
-        self.class.json_attrs.inject({}) do |params, jsa|
+        self.attributes.keys.inject({}) do |params, jsa|
           val = self.send(jsa)
 
           next params if val.nil?

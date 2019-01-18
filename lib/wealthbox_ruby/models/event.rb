@@ -19,9 +19,6 @@ module WealthboxRuby
       attribute :linked_to, Array # Array of Contacts
       attribute :invitees, Array # Array of Contacts
 
-      json_attributes :id, :creator, :created_at, :updated_at, :title, :starts_at, :ends_at,
-        :repeats, :event_category, :all_day, :location, :state, :visible_to, :email_invitees, :linked_to, :invitees
-
       def save
         if @id
           response = @client.put "events/#{@id}", {body: json_params}

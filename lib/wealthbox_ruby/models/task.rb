@@ -16,9 +16,6 @@ module WealthboxRuby
       attribute :priority, String
       attribute :visible_to, String
 
-      json_attributes :id, :creator, :created_at, :updated_at, :name, :due_date, :description, :complete,
-        :category, :linked_to, :priority, :visible_to
-
       def save
         if @id
           response = @client.put "tasks/#{@id}", {body: json_params}
