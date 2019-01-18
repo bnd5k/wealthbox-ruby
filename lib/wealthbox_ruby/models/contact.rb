@@ -73,10 +73,6 @@ module WealthboxRuby
       attribute :websites, Array
       attribute :custom_fields, Array
 
-      json_attributes :first_name, :middle_name, :last_name, :prefix, :suffix, :nickname, :job_title, :birth_date, :gender,
-                      :street_addresses, :email_addresses, :phone_numbers, :drivers_license, :occupation, :passport_number,
-                      :birth_place, :maiden_name, :marital_status
-
       def save
         if @id
           response = @client.put "contacts/#{@id}", {body: json_params}
