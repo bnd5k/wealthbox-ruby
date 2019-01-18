@@ -10,8 +10,10 @@ require_relative 'wealthbox_ruby/models/api_model'
 require_relative 'wealthbox_ruby/models/household'
 require_relative 'wealthbox_ruby/models/contact'
 require_relative 'wealthbox_ruby/models/task'
+require_relative 'wealthbox_ruby/models/event'
 require_relative 'wealthbox_ruby/client/contacts'
 require_relative 'wealthbox_ruby/client/tasks'
+require_relative 'wealthbox_ruby/client/events'
 require_relative 'wealthbox_ruby/client'
 
 module WealthboxRuby
