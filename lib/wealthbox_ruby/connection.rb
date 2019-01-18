@@ -31,7 +31,8 @@ module WealthboxRuby
 
     def headers
       headers = {
-        'Accept' => 'application/json'
+        'Accept' => 'application/json',
+        'Content-Type' => 'application/json'
       }
 
       if @api_key

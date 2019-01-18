@@ -5,6 +5,7 @@ module WealthboxRuby
     include WealthboxRuby::Client::Contacts
     include WealthboxRuby::Client::Tasks
     include WealthboxRuby::Client::Events
+    include WealthboxRuby::Client::Workflows
 
     def initialize(options =  {})
       raise ArgumentError, 'API key or OAuth token required.' unless options[:api_key] || options[:oauth_token]
