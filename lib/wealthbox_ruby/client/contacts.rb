@@ -25,6 +25,11 @@ module WealthboxRuby
         contact = WealthboxRuby::Models::Contact.new params.merge(id: contact_id), self
         contact.save
       end
+
+      def delete_contact(contact_id)
+        contact = WealthboxRuby::Models::Contact.new({id: contact_id}, self)
+        contact.remove
+      end
     end
   end
 end
