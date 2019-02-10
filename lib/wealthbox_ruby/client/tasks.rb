@@ -21,6 +21,11 @@ module WealthboxRuby
         task = WealthboxRuby::Models::Task.new params.merge(id: task_id), self
         task.save
       end
+
+      def delete_task(task_id)
+        task = WealthboxRuby::Models::Task.new({id: task_id}, self)
+        task.remove
+      end
     end
   end
 end

@@ -21,6 +21,11 @@ module WealthboxRuby
         event = WealthboxRuby::Models::Event.new params.merge(id: event_id), self
         event.save
       end
+
+      def delete_event(event_id)
+        event = WealthboxRuby::Models::Event.new({id: event_id}, self)
+        event.remove
+      end
     end
   end
 end

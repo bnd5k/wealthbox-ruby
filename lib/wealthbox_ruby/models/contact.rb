@@ -82,6 +82,11 @@ module WealthboxRuby
 
         self.class.new response, self
       end
+
+      def remove
+        response = @client.delete "contacts/#{id}"
+        self.class.new response, self
+      end
     end
   end
 end
