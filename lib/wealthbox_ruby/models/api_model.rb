@@ -8,7 +8,7 @@ module WealthboxRuby
       end
 
       def json_params
-        self.attributes.keys.inject({}) do |params, jsa|
+        formatted_params = self.attributes.keys.inject({}) do |params, jsa|
           val = self.send(jsa)
 
           next params if val.nil?
@@ -26,7 +26,9 @@ module WealthboxRuby
           params[jsa] = val
           params
         end
+        formatted_params.to_json
       end
+
     end
   end
 end
