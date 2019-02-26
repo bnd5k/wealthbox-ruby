@@ -3,8 +3,9 @@ module WealthboxRuby
     include WealthboxRuby::Connection
     include WealthboxRuby::Authentication
     include WealthboxRuby::Client::Contacts
-    include WealthboxRuby::Client::Tasks
     include WealthboxRuby::Client::Events
+    include WealthboxRuby::Client::Notes
+    include WealthboxRuby::Client::Tasks
     include WealthboxRuby::Client::Workflows
 
     def initialize(options =  {})
