@@ -1,8 +1,10 @@
 module WealthboxRuby
   class Client
     module Contacts
-      def search_contacts(search_query, options = {})
-        contacts = get 'contacts', {query: { name: search_query}}
+
+      # search_query examples: {name: 'John Appleseed'} or {email: 'foobar@example.com'}
+      def search_contacts(search_query = {})
+        contacts = get('contacts', {query: search_query})
         contacts['contacts'].map { |contact_params| WealthboxRuby::Models::Contact.new contact_params, self }
       end
 
