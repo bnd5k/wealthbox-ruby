@@ -7,6 +7,13 @@ module WealthboxRuby
         notes['status_updates'].map { |note_params| WealthboxRuby::Models::Note.new note_params, self }
       end
 
+      def notes_for_contact(contact_id)
+        query = { resource_type: :contact, resource_id: contact_id }
+        notes = get('notes', { query: query })
+
+        notes['status_updates'].map { |note_params| WealthboxRuby::Models::Note.new note_params, self }
+      end
+
       def note(note_id)
         note = get "notes/#{note_id}"
         WealthboxRuby::Models::Note.new note, self

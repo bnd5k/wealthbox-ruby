@@ -7,6 +7,13 @@ module WealthboxRuby
         workflows['workflows'].map { |workflow_params| WealthboxRuby::Models::Workflow.new workflow_params, self }
       end
 
+      def workflows_for_contact(contact_id)
+        query = { resource_type: :contact, resource_id: contact_id }
+        workflows = get('workflows', { query: query })
+
+        workflows['workflows'].map { |workflow_params| WealthboxRuby::Models::Workflow.new workflow_params, self }
+      end
+
       def workflow(workflow_id)
         workflow = get "workflows/#{workflow_id}"
         WealthboxRuby::Models::Workflow.new workflow, self

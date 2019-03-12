@@ -2,13 +2,15 @@ module WealthboxRuby
   class Client
     module Events
 
-      def search_events(search_query, options = {})
-        events = get 'events', {query: { name: search_query}}
+      def events
+        events = get 'events'
         events['events'].map { |event_params| WealthboxRuby::Models::Event.new event_params, self }
       end
 
-      def events
-        events = get 'events'
+      def events_for_contact(contact_id)
+        query = { resource_type: :contact, resource_id: contact_id }
+        events = get('events', { query: query })
+
         events['events'].map { |event_params| WealthboxRuby::Models::Event.new event_params, self }
       end
 

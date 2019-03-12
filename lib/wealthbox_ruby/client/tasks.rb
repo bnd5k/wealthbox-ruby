@@ -7,6 +7,13 @@ module WealthboxRuby
         tasks['tasks'].map { |task_params| WealthboxRuby::Models::Task.new task_params, self }
       end
 
+      def tasks_for_contact(contact_id)
+        query = { resource_type: :contact, resource_id: contact_id }
+        tasks = get('tasks', { query: query })
+
+        tasks['tasks'].map { |task_params| WealthboxRuby::Models::Task.new task_params, self }
+      end
+
       def task(task_id)
         task = get "tasks/#{task_id}"
         WealthboxRuby::Models::Task.new task, self
