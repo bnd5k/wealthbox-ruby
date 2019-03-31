@@ -5,6 +5,7 @@ module WealthboxRuby
     include WealthboxRuby::Client::Contacts
     include WealthboxRuby::Client::Events
     include WealthboxRuby::Client::Notes
+    include WealthboxRuby::Client::Opportunities
     include WealthboxRuby::Client::Tasks
     include WealthboxRuby::Client::Workflows
 
